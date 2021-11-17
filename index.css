@@ -1,0 +1,170 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    font-family:tahoma;
+}
+
+body{
+    height: fit-content;
+    width: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.book-container{
+  width: 500px;
+  height: 600px;
+  background-color:transparent;
+  position: relative;
+  margin: 20px auto;
+  
+  box-shadow: -0px -0px 28px 2px #ccc;
+  transform: rotate(0deg);
+  border-radius: 15px;
+  background-image: url('./contents/Menu-Page-4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    transition: 300ms ease-in-out;
+    cursor: url("./contents/cursor.png"), auto;
+
+   
+}
+
+
+.book-page{
+  width: 500px;
+  height: 600px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  transition: 300ms ease-in-out;
+  transform-style: preserve-3d;
+  transform: perspective(700px);
+  border-radius: 15px;
+  background-size:cover;
+  background-position: center center;
+
+}
+
+.book-cover{
+  width:100%;
+  height:100%;
+  transform-origin: left;
+  transition: 300ms ease-in-out;
+  transform-style: preserve-3d;
+  transition:.5s;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-radius: 15px;
+
+}
+.book-page .one{
+    width:100%;
+    height:100%;
+    position: absolute;
+    background-image: url('./contents/Menu-Front.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
+.one-back{
+    width:100%;
+    height:100%;
+    background-image: url('./contents/Menu-Page-1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    transition: 300ms ease-in-out;
+    visibility: hidden;
+}
+.book-page .two{
+    width:100%;
+    height:100%;
+    background-image: url('./contents/Menu-Page-2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;   
+    visibility: hidden; 
+}
+.two-back{
+    width:100%;
+    height:100%;
+    background-image: url('./contents/Menu-Page-3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    transition: 300ms ease-in-out;
+    visibility: hidden;
+}
+/*.book-page:hover{
+  transform: rotateY(-180deg);
+}*/
+
+/* .book-page:hover .book-cover{
+  transform: rotateY(-180deg);
+} */
+/* .book-cover:nth-child(0){
+    background-color: aqua;
+} */
+
+#second-nxt{
+    display: none;
+}
+#second-pre{
+    display: none;
+}
+
+#first-pre{
+    display: none;
+}
+
+.next-btns{
+    height: 600px;
+    width: 500px;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: url("./contents/cursor.png"), auto;
+
+}
+.previus-button{
+    height: 600px;
+    width: 500px;
+    background-color: transparent;
+    position: absolute;
+    left: 190px;
+    top: 20px;
+    z-index: 3;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: url("./contents/cursor.png"), auto;
+}
+.next-btns:hover, .previus-button:hover{
+    background-color: rgba(102, 102, 102, 0.15);
+}
+    
+
+
+@media only screen and (max-width:900px){
+    
+}

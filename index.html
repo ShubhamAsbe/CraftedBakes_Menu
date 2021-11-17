@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafted Bakes</title>
+    <link rel="icon" href="./contents/logo.png" type="image/png" sizes="16x16">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://faijan-momin.github.io/crafted-bakes/">
+    <meta property="og:title" content="Crafted Bakes">
+    <meta property="og:description" content="Best Cakes Here!">
+    <meta property="og:image" content="./contents/logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.iohttps://faijan-momin.github.io/crafted-bakes/">
+    <meta property="twitter:title" content="Crafted Bakes">
+    <meta property="twitter:description" content="Best Cakes Here!">
+    <meta property="twitter:image" content="./contents/logo.png">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <button class="previus-button" id="first-pre"></button>
+    <button class="previus-button" id="second-pre"></button>
+
+    <div class="book-container">
+        <button class="next-btns" id="first-nxt" ></button>
+        <div class="book-page">
+            <div class="book-cover one"></div>
+            <div class="book-cover one-back"></div>
+        </div>
+        <button class="next-btns" id="second-nxt"></button> 
+        <div class="book-page">
+            <div class="book-cover two"></div>
+            <div class="book-cover two-back"></div>
+        </div>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+            $("#first-nxt").click(function(){
+                $(".one").css("transform","rotateY(-180deg)");
+                $(".one-back").css("transform","rotateY(-180deg)");
+
+                $(".one").css("visibility","hidden");
+                $(".one-back").css("visibility","visible");
+                $(".two").css("visibility","visible");
+                $(".two-back").css("visibility","hidden");
+
+                $("#first-nxt").css("display","none");
+                $("#second-nxt").css("display","block");
+                $("#second-pre").css("display","none");
+                $("#first-pre").css("display","block");
+                $(".book-container").css("left","15%");
+                $(".book-container").css("transition"," right 200ms ease-in-out");
+
+
+            });
+            $("#second-nxt").click(function(){
+                $(".two").css("transform","rotateY(-180deg)");
+                $(".two-back").css("transform","rotateY(-180deg)");
+
+                $(".two").css("visibility","hidden");
+                $(".two-back").css("visibility","visible");
+                $(".one").css("visibility","hidden");
+                $(".one-back").css("visibility","hidden");
+
+                $("#first-nxt").css("display","none");
+                $("#second-nxt").css("display","none");
+                $("#second-pre").css("display","block");
+                $("#first-pre").css("display","none");
+            });
+            $("#second-pre").click(function(){
+                $(".two").css("transform","rotateY(0deg)");
+                $(".two-back").css("transform","rotateY(0deg)");
+
+                $(".two").css("visibility","visible");
+                $(".two-back").css("visibility","hidden");
+                $(".one").css("visibility","hidden");
+                $(".one-back").css("visibility","visible");
+
+                $("#first-nxt").css("display","none");
+                $("#second-nxt").css("display","block");
+                $("#second-pre").css("display","none");
+                $("#first-pre").css("display","block");
+            });
+            $("#first-pre").click(function(){
+                $(".one").css("transform","rotateY(0deg)");
+                $(".one-back").css("transform","rotateY(0deg)");
+
+                $(".one").css("visibility","visible");
+                $(".one-back").css("visibility","hidden");
+                $(".two").css("visibility","hidden");
+                $(".two-back").css("visibility","hidden");
+
+                $("#first-nxt").css("display","block");
+                $("#second-nxt").css("display","none");
+                $("#second-pre").css("display","none");
+                $("#first-pre").css("display","none");
+                $(".book-container").css("left","0%");
+                $(".book-container").css("transition"," left 200ms ease-in-out");
+                
+
+            });
+        });
+    </script>
+</body>
+</html>
